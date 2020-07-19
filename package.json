@@ -1,0 +1,32 @@
+{
+  "name": "@hkbyte/lib",
+  "version": "1.0.0",
+  "description": "HK Byte Library for Validation and Error Handling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkbyte/npm-lib.git"
+  },
+  "keywords": [
+    "hkbyte",
+    "lib",
+    "hk",
+    "validation",
+    "error"
+  ],
+  "author": "Harshit Kunal LLP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hkbyte/npm-lib/issues"
+  },
+  "homepage": "https://github.com/hkbyte/npm-lib#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@hapi/joi": "^16.1.8"
+  }
+}
