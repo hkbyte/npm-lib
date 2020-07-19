@@ -1,6 +1,6 @@
 {
   "name": "@hkbyte/lib",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "NPM package @hkbyte/lib",
   "main": "src/index.js",
   "dependencies": {
@@ -28,10 +28,5 @@
   "homepage": "https://github.com/hkbyte/npm-lib#readme",
   "publishConfig": {
     "access": "public"
-  },
-  "np": {
-    "yarn": false,
-    "test": false,
-    "cleanup": false
   }
 }
