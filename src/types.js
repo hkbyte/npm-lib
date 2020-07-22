@@ -661,6 +661,7 @@ Type.email = function (required = false, props = {}, args = {}) {
  * @param {boolean} [required=false]
  * @param {RegExp} pattern Regular Expression pattern
  * @param {object} [props={}] Field Properties
+ * @param {string} [props.name=] Pattern name
  * @param {string} [props.case=] Can be either 'upper' or 'lower'
  * @param {number} [props.length=] The exact number of string characters allowed
  * @param {number} [props.min=] The maximum number of string characters allowed
@@ -674,6 +675,7 @@ Type.email = function (required = false, props = {}, args = {}) {
  * @returns {*} Joi object
 */
 Type.pattern = function (required = false, pattern, props = {}, args = {}) {
+	const propName = props.name || null // name of pattern
 	const propCase = props.case || null // can be either 'upper' or 'lower'
 	const propLength = props.length || null
 	const propMax = props.max || null // the maximum number of string characters allowed
