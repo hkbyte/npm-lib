@@ -1,5 +1,14 @@
 // Custome Domain Error
+/**
+ * Create new Custom Domain Error
+ * @class @extends Error
+ * @returns {Error} Error
+ */
 class DomainError extends Error {
+    /**
+     * 
+     * @param {string} message
+     */
     constructor(message) {
         super(message)
 
@@ -21,6 +30,11 @@ class DomainError extends Error {
 
 // Internal Error
 class InternalError extends DomainError {
+    /**
+    * 
+    * @param {string} message Error Message
+    * @param {Array} [stack=] Error Stack
+    */
     constructor(message, stack = null) {
         super(message)
 
@@ -35,6 +49,11 @@ class InternalError extends DomainError {
 
 // Bad Request Error
 class BadRequestError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -50,6 +69,11 @@ class BadRequestError extends DomainError {
 
 // Not Found Error
 class NotFoundError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -65,6 +89,11 @@ class NotFoundError extends DomainError {
 
 // Invalid Argument Error
 class InvalidArgumentError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -80,6 +109,11 @@ class InvalidArgumentError extends DomainError {
 
 // Forbidden Error
 class ForbiddenError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -95,6 +129,11 @@ class ForbiddenError extends DomainError {
 
 // Unauthorised Error
 class UnauthorisedError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -110,6 +149,11 @@ class UnauthorisedError extends DomainError {
 
 // Already Exist Error
 class AlreadyExistError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -125,6 +169,11 @@ class AlreadyExistError extends DomainError {
 
 // Timeout Error
 class TimeoutError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -140,6 +189,11 @@ class TimeoutError extends DomainError {
 
 // Unimplemented Error
 class UnimplementedError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -155,6 +209,11 @@ class UnimplementedError extends DomainError {
 
 // Precondition Failed Error
 class PreconditionFailedError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
@@ -170,6 +229,11 @@ class PreconditionFailedError extends DomainError {
 
 // Bad Gateway Error
 class BadGatewayError extends DomainError {
+    /**
+     * 
+     * @param {string} message Error Message
+     * @param {Array} [stack=] Error Stack
+     */
     constructor(message, stack = null) {
         super(message)
 
