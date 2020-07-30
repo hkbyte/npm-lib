@@ -63,7 +63,7 @@ Type.object = function (required = false, schema = {}, props = {}, args = {}) {
 	const propUnknown = props.unknown || false // allows unknown keys if true
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.object(schema)
@@ -122,7 +122,7 @@ Type.integer = function (required = false, props = {}, args = {}) {
 	const propUnsafe = props.unsafe || false
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.number().integer()
@@ -193,7 +193,7 @@ Type.float = function (required = false, props = {}, args = {}) {
 	const propPrecision = props.precision || null
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.number()
@@ -258,7 +258,7 @@ Type.port = function (required = false, props = {}, args = {}) {
 	const propMax = props.max || null
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.number().port()
@@ -318,7 +318,7 @@ Type.string = function (required = false, props = {}, args = {}) {
 	const propMin = props.min || null // the minimum number of string characters required
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argLowercase = args.lowercase || false
 	const argUppercase = args.uppercase || false
 	const argNormalize = args.normalize || null // The Unicode normalization form to use. Valid values: NFC [default], NFD, NFKC, NFKD
@@ -396,7 +396,7 @@ Type.base64 = function (required = false, props = {}, args = {}) {
 	const propUrlSafe = props.urlSafe || false // if true, uses the URI-safe base64 format which replaces + with - and \ with _
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.string().base64({
@@ -435,7 +435,7 @@ Type.alphanum = function (required = false, props = {}, args = {}) {
 	const propMin = props.min || null // the minimum number of string characters required
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argLowercase = args.lowercase || false
 	const argUppercase = args.uppercase || false
 	const argNormalize = args.normalize || null // The Unicode normalization form to use. Valid values: NFC [default], NFD, NFKC, NFKD
@@ -515,7 +515,7 @@ Type.token = function (required = false, props = {}, args = {}) {
 	const propMin = props.min || null // the minimum number of string characters required
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argLowercase = args.lowercase || false
 	const argUppercase = args.uppercase || false
 	const argNormalize = args.normalize || null // The Unicode normalization form to use. Valid values: NFC [default], NFD, NFKC, NFKD
@@ -598,7 +598,7 @@ Type.email = function (required = false, props = {}, args = {}) {
 	const propMinDomainSegments = props.minDomainSegments || 2 // Number of segments required for the domain
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argLowercase = args.lowercase || false
 	const argUppercase = args.uppercase || false
 	const argNormalize = args.normalize || null // The Unicode normalization form to use. Valid values: NFC [default], NFD, NFKC, NFKD
@@ -682,7 +682,7 @@ Type.pattern = function (required = false, pattern, props = {}, args = {}) {
 	const propMin = props.min || null // the minimum number of string characters required
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argLowercase = args.lowercase || false
 	const argUppercase = args.uppercase || false
 	const argNormalize = args.normalize || null // The Unicode normalization form to use. Valid values: NFC [default], NFD, NFKC, NFKD
@@ -756,7 +756,7 @@ Type.creditCard = function (required = false, props = {}, args = {}) {
 	const propMin = props.min || null // the minimum number of string characters required
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argTrim = setProps(args.trim, true) // the string will be trimmed
 
 	// Field Initialize
@@ -811,7 +811,7 @@ Type.dataUri = function (required = false, props = {}, args = {}) {
 	const propPaddingRequired = setProps(props.paddingRequired, true) // which will require = padding if true
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argTrim = setProps(args.trim, true) // the string will be trimmed
 
 	// Field Initialize
@@ -870,7 +870,7 @@ Type.domain = function (required = false, props = {}, args = {}) {
 	const propMinDomainSegments = props.minDomainSegments || 2 // Number of segments required for the domain
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argTrim = setProps(args.trim, true) // the string will be trimmed if true
 
 	// Field Initialize
@@ -923,7 +923,7 @@ Type.hex = function (required = false, props = {}, args = {}) {
 	const propLength = props.length || null
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argTrim = setProps(args.trim, true) // the string will be trimmed
 	const argByteAligned = args.byteAligned || false // A 0 will be added in front of the string in case it needs to be aligned
 
@@ -971,7 +971,7 @@ Type.ip = function (required = false, props = {}, args = {}) {
 	const propCidr = props.cidr || null // Valid values: optional, required, forbidden
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 	const argTrim = setProps(args.trim, true) // the string will be trimmed
 
 	const options = {}
@@ -1014,7 +1014,7 @@ Type.json = function (required = false, props = {}, args = {}) {
 	let result = joiExtension.json()
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 
 	// Required and Default Argument
 	result = required ? result.required() : result.allow('', null).empty(['', null]).default(argDefault)
@@ -1049,7 +1049,7 @@ Type.array = function (required = false, schema, props = {}, args = {}) {
 	const propMin = props.min || null // the lowest number of array items allowed
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 
 	// Field Initialization
 	let result = joi.array().items(schema)
@@ -1105,7 +1105,7 @@ Type.binary = function (required = false, props = {}, args = {}) {
 	const propMin = props.min || null //  the lowest size of the buffer  allowed
 
 	// Default Args
-	const argDefault = args.default || null // Default Value
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null // Default Value
 
 	// Field Initialization
 	let result = joi.binary()
@@ -1196,7 +1196,7 @@ Type.date = function (required = false, props = {}, args = {}) {
 	const propTimestamp = props.timestamp || null // the type of timestamp (allowed values are unix or javascript [default])
 
 	// Default Args
-	const argDefault = args.default || null
+	const argDefault = args.default || (args.default == 0 || args.default == false) ? args.default : null
 
 	// Field Initialize
 	let result = joi.date()
